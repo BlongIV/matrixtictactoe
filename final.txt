@@ -1,0 +1,40 @@
+My Final Project is a Text Based Board Game played in the Terminal.
+
+I have programmed a game called Matrix Tic Tac Toe. This is a game that
+I learned from an old math teacher of mine. The game consists of one
+big tic tac toe board that has a smaller tic tac toe board in each square.
+The goal is to win the smaller boards to create a 3 in a row win on the larger board.
+The Rules are as follows:
+
+The first player, O, can play their move in any square on the whole board.
+The square index on the smaller board (for example row 0 col 2) that they play their move in 'sends'
+the next move, Player X's, to that indexed board on the larger board.
+For example, if player O chose to play their move in square index row 1, col 1
+inside of board row 0 col 0, then Player X would have to play their move inside
+of board index row 1, col 1.
+The strategy of the game comes in thinking where you should send your opponent
+while also thinking about how you yourself can win.
+If someone gets sent to a board that is already won, then they are sent to the next
+board that is not won. The next board goes by indexes row 0 col 0 -> row 0 col 1 -> row 0 col 2
+-> row 1 col 0 and so on. If a player gets sent to board index row 2 col 2 and that board is won,
+then it wraps back around and the next board is row 0 col 0
+
+This process of movement between boards continues until either player O or player X wins 3 big boards in
+a row.
+
+The AI has been implemented to the game. It has been programmed to block opponent smallBoard wins and to 
+take its own smallBoard wins. The AI prioritzes its own wins before blocking the opponents. If there are
+no wins to take or block, then the AI plays a random move.
+
+To play the game, simply run the file and type playGame() into the terminal.
+This will then prompt you to choose your gamemode. You can choose to play 2 player, against another human,
+or you can play 1 player against the AI, or you can simulate a game of AI vs AI. 
+If you simulate a game, only the final board and the winner (if there is one) will be displayed.
+If you play vs the AI, you are able to choose to play either X or O.
+I recommend enlarging the terminal to be able to see the board and all instructions.
+
+The game has now been user-proofed at all points. The program will only accept valid inputs from the user, and more
+importantly, the program will not crash if the user enters an invalid input.
+
+The hardest part was implementing the classes within classes. The visual representation of the bigBoard was one
+of the more difficult things to do.
